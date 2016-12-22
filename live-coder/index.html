@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>..:: Live Coding ::..</title>
-	<script src="dist/polyfills.min.js"></script>
-	<script src="dist/live-coder.min.js"></script>
+	<script src="polyfills.min.js"></script>
+	<script src="live-coder.min.js"></script>
 	<script>
 		var liveCoder = new Live.Coder({ typingSpeed: 50 });
 		fetch('example.txt')
 			.then( response => response.text())
 			.then( program => {
 				liveCoder.run(program).then(() => {
-					console.info('Program finished')
+					console.info('Program finished');
 				});
 			});
 	</script>
