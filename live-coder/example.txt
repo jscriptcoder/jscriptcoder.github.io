@@ -9,7 +9,7 @@ html, body { height: 100%; }
 body {
 	margin: 0;
 	padding: 0;
-	background: transparent url('bg-8-full.jpg');
+	background: transparent url('static/bg-8-full.jpg');
 	background-size: cover;
 	overflow: hidden;
 }
@@ -282,7 +282,7 @@ var spawn2 = new Live.Coder({
 	typingSpeed: 10
 });
 
-var spawn1Promise = fetch('spawn1.txt')
+var spawn1Promise = fetch('test/spawn1.txt')
 	.then(function (response) { return response.text() })
 	.then(function (program) { return spawn1.run(program) });
 
@@ -306,7 +306,7 @@ liveCoder.setTypingSpeed(50);
 --- apply ---
 
 // second LiveCoder
-var spawn2Promise = fetch('spawn2.txt')
+var spawn2Promise = fetch('test/spawn2.txt')
 	.then(function (response) { return response.text() })
 	.then(function (program) { return spawn2.run(program) });
 --- apply ---
@@ -319,7 +319,7 @@ var spawnsDone = Promise.all([spawn1Promise, spawn2Promise]);
 /**
  * Alright, that was fun :-)
  *
- * I belive there is potential in this tool,
+ * I believe there is potential in this tool,
  * but it's still early to say. Imagine a few
  * instances building live an entire application.
  * It would, for sure, be great to see each step
