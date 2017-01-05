@@ -9,7 +9,7 @@ html, body { height: 100%; }
 body {
 	margin: 0;
 	padding: 0;
-	background: transparent url('static/bg-8-full.jpg');
+	background: transparent url('bg-8-full.jpg');
 	background-size: cover;
 	overflow: hidden;
 }
