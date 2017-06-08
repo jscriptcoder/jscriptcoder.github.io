@@ -1,0 +1,44 @@
+<div class="highscore-component">
+    <h1>Highscore</h1>
+    
+    <h4 ng-if="!highscoreCtrl.model.hasUsers"><em>Loading users...</em></h4>
+    
+    <table class="table table-striped" ng-show="highscoreCtrl.model.hasUsers">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Total score</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr ng-repeat="user in highscoreCtrl.model.highscore">
+                <td>{{$index}}</td>
+                <td>{{user.name}}</td>
+                <td class="width-600">
+                    <div class="score" title="Click for details" ng-click="openDetails = !openDetails">{{user.totalScore}}</div>
+                    <table class="table table-bordered" ng-show="openDetails">
+                        <thead>
+                            <tr>
+                                <th>Word</th>
+                                <th>Max Points</th>
+                                <th>Final Score</th>
+                                <th>Time Spent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="wordScore in user.result">
+                                <td>{{wordScore.word}}</td>
+                                <td>{{wordScore.points}}</td>
+                                <td>{{wordScore.score}}</td>
+                                <td>{{wordScore.time}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>

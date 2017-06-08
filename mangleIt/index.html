@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>..:: MangleIt ::..</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+    
+    <header class="bg-info">
+        
+        <h1>Mangle-It</h1>
+        
+        <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="#/highscore">Highscore</a></li>
+        </ol>
+        
+    </header>
+    
+    <main>
+        
+        <div ui-view>
+            <h3><em>Loading. Please wait...</em></h3>
+        </div>
+        
+    </main>
+    
+    <footer class="bg-primary">
+        
+        <ul class="list-inline">
+            <li><a href="https://github.com/jscriptcoder/mangleIt" target="_blank">GitHub</a></li>
+            <li><a href="https://codio.com/jscriptcoder/mangleit" target="_blank">Codio.com</a></li>
+            <li><a href="http://jscriptcoder.com/" target="_blank">&copy; jscriptcoder.com</a></li>
+        </ul>
+        
+    </footer>
+    
+    <!-- Promise polyfill -->
+    <script src="js/libs/promise.js"></script>
+    
+    <!-- ES6 module system polyfill -->
+    <script src="js/libs/system.js"></script>
+    
+    <!-- Firebase as backend -->
+    <script src="js/libs/firebase.js"></script>
+    
+    <!-- Angular framework -->
+    <script src="js/libs/angular.js"></script>
+
+    <!-- UI-Router -->
+    <script src="js/libs/angular-ui-router.js"></script>
+    
+    <script>
+        System.config({
+            baseURL: './js/',
+            defaultJSExtensions: true
+        });
+        System.import('index');
+    </script>
+    
+</body>
+</html>
