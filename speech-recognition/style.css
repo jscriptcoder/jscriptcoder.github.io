@@ -1,0 +1,108 @@
+@import "variables.css";
+
+* { box-sizing: border-box; }
+
+body {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(ellipse at 70% 60%, #c3e060 0%, rgba(195, 224, 96, 0) 30%),
+    radial-gradient(ellipse at bottom left, #00a3cb 0%, rgba(0, 163, 203, 0) 70%),
+    linear-gradient(135deg, rgba(18, 46, 119, 0) 0%, rgba(18, 46, 119, 0) 75%, #122e77 100%),
+    linear-gradient(to right, #625793 0%, #d55d64 17%, #e49129 74%, #c0671c 100%);
+  background-blend-mode: screen, hue, color, overlay, normal;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.notepad-wrapper {
+  position: relative;
+}
+
+.notepad {
+  width: 700px;
+  overflow: hidden;
+  background-color: #FFF;
+  color: #222;
+  font-family: Courier, monospace;
+  font-weight: normal;
+  font-size: 1em;
+  resize: none;
+  line-height: 40px;
+  padding-left: 100px;
+  padding-right: 40px;
+  padding-top: 40px;
+  padding-bottom: 34px;
+	background-image: var(--notepad-lines), var(--notepad-paper);
+	background-repeat: repeat-y, repeat;
+  background-size: 100%, auto;
+  outline: none;
+}
+
+.speech-recognizer-trigger {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 0;
+  background: var(--microphone) no-repeat 0 0;
+  background-size: 24px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+}
+
+.speech-recognizer-trigger--recognizing {}
+
+@keyframes waves {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+  }
+}
+
+.speech-recognizer-trigger--recognizing:before,
+.speech-recognizer-trigger--recognizing:after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  animation-name: waves;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.speech-recognizer-trigger--recognizing:before {
+  border: 2px #00a3cb solid;
+  animation-delay: 0s;
+}
+
+.speech-recognizer-trigger--recognizing:after {
+  border: 2px #c3e060 solid;
+  animation-delay: 0.3s;
+}
