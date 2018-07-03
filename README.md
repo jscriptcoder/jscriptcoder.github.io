@@ -1,2 +1,3 @@
 # jscriptcoder.github.io
-Just me having fun
+
+Projects showcase
